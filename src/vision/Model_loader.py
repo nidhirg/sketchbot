@@ -34,6 +34,6 @@ class YOLOv5Model(AbstractModel):
 
     def postprocess_output(self, output):
         boxes = output.xyxy[0].cpu().numpy()
-        centroids = [(box[0]+box[2])/2, (box[1]+box[3])/2] for box in boxes]
+        centroids = [[(box[0]+box[2])/2, (box[1]+box[3])/2] for box in boxes]
         return boxes, centroids
 
