@@ -20,14 +20,6 @@ graph = tf.compat.v1.get_default_graph()
 #load trained CNN model
 with open(f'./model_cnn.pkl', 'rb') as f:
         model = pickle.load(f)
-# tf.saved_model.LoadOptions(
-#     allow_partial_checkpoint=False,
-#     experimental_io_device='/job:localhost',
-#     experimental_skip_checkpoint=False,
-#     experimental_variable_policy=None
-# )
-# # save_option = tf.saved_model.SaveOptions(experimental_io_device="/job:localhost")
-# model = tf.keras.models.load_model(os.getcwd())
 
 #initialize Flask app
 app = flask.Flask(__name__, template_folder='templates')
